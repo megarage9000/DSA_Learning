@@ -33,16 +33,9 @@ int getIntegerInput(std::string message){
 
 
 double factorial(int num){
-    double n = num;
-    int i = n - 1;
-    if(n == 0){
-        return 1;
+    double fact = 1;
+    for (int i = 1; i <= num; i++){
+        fact = fact * i;
     }
-    else{
-        while(i > 0){
-            n *= i;
-            i--;
-        }
-        return n;
-    }
+    return fact;
 }
