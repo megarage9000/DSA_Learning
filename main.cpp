@@ -4,35 +4,27 @@
 
 
 // DSA_Intro: Asymptotic Analysis
-// Lesson Link: https://www.programiz.com/dsa/asymptotic-notations
-// Additional Resource: https://www.geeksforgeeks.org/analysis-of-algorithms-set-3asymptotic-notations/
+// Lesson Link: https://www.programiz.com/dsa/master-theorem
+// Additional Resources: 
+// - https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)
+// - https://brilliant.org/wiki/master-theorem/
 //
-// Asymptotic Notations are used to describe the running time of an
-// algorithm. There are three main notations.
+// Master Theorem is a formula used to solve recurrence relations of the form
+// T(n) = aT(n/b) + f(n)
+// where:
+// n = size of the input
+// a = number of subproblems in the recursion
+// n/b = size of each subproblems(all subproblems are assumed of equal size)
+// b = level
+// f(n) = cost of work done outside recursive call
+// - a >= 1 and b > 1, both are constants
+// - f(n) is an asymptotically positive function
 //
-// - Theta Notation(AVERAGE)
-//      - Encloses the function from above and below, represents the
-//      average case complexity of an algorithm
-//
-//      - For a function g(n), (theta)(g(n)) is given by the following relation:
-//      = {f(n): there exists positive constants c1, c2 and n0 such that 
-//      0 <= c1g(n) <= f(n) <= c2g(n) for all n >= n0}
-//
-// - Big-O Notation(WORST-CASE)
-//      - Represents the upper bound of the algorithm running time, 
-//      denoting the worst case complexity
-//
-//      - For a function g(n), (big-O)(g(n)) is given by the following relation:
-//      = {f(n): there exists positive constants c and n0 such that
-//      0 <= f(n) <= cg(n) for all n >= n0}
-//
-// - Omega Notation(BEST-CASE)
-//      - Represents the lower bound of the algorithm running time, 
-//      denoting the best case complexity
-//
-//      - For a function g(n), (omega)(g(n)) is given by the following relation:
-//      = {f(n): there exists positive constants c and n0 such that
-//      0 <= cg(n) <= f(n) for all n >= n0}
+// 3 cases for Master Theorem:
+// Let c = log(base b)(a) 
+// 1. if f(n) < n ^ log(base b)(a), then T(n) = (theta)(n ^ log(base b)(a))
+// 2. if f(n) = n ^ log(base b)(a), then T(n) = (theta)(n ^ log(base b)(a) * log(n))
+// 3. if f(n) > n ^ log(base b)(a), then T(n) = (theta)(f(n))
 
 
 double factorial(int num);
